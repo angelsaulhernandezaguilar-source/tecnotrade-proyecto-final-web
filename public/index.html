@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="es" data-tt-base="{{TT_BASE_PATH}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#172b3a">
+  <meta name="description" content="TecnoTrade: compra dispositivos nuevos y seminuevos, solicita la valoración de tu equipo y administra tus pedidos en un solo lugar.">
+  <title>TecnoTrade · Tecnología que sigue contigo</title>
+  <link rel="icon" href="index.php?file=assets/favicon.svg&amp;v=20261026x" type="image/svg+xml">
+  <link rel="stylesheet" href="index.php?file=styles.css&amp;v=20261026x">
+  <link rel="stylesheet" href="index.php?file=tienda.css&amp;v=20261026x">
+  <link rel="stylesheet" href="index.php?file=servidor.css&amp;v=20261026x">
+  <link rel="stylesheet" href="index.php?file=cuenta.css&amp;v=20261026x">
+  <link rel="stylesheet" href="index.php?file=paneles.css&amp;v=20261026x">
+  <link rel="stylesheet" href="index.php?file=vue/tienda-vue.css&amp;v=20261123b">
+  <script defer src="index.php?file=app.js&amp;v=20261026x"></script>
+  <script defer src="index.php?file=cuenta.js&amp;v=20261026x"></script>
+  <script defer src="index.php?file=paneles.js&amp;v=20261026x"></script>
+  <!-- Vue 3: catálogo y carrito reactivos (código fuente en /frontend, compilado con Vite) -->
+  <script defer src="index.php?file=vue/tienda-vue.js&amp;v=20261123b"></script>
+</head>
+<body>
+  <a class="solo-lectores salto-contenido" href="#contenido">Saltar al contenido</a>
+  <header class="header" id="site-header">
+    <div class="announcement"><div class="contenedor"><span>TECNOLOGÍA CON UNA SEGUNDA OPORTUNIDAD</span><a href="#/trade">Conoce el programa de canje →</a></div></div>
+    <div class="contenedor header__contenido">
+      <a class="logo" href="#/" aria-label="TecnoTrade, inicio"><img src="index.php?file=assets/logo-mark.svg&amp;v=20261026x" width="31" height="31" alt="">Tecno<span class="logo-accent">Trade</span><span class="logo-dot">.</span></a>
+      <form class="global-search" id="global-search" role="search" autocomplete="off">
+        <svg class="ui-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <label class="solo-lectores" for="site-search">Buscar dispositivos</label>
+        <input id="site-search" type="search" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="search-suggestions" placeholder="Busca tu próximo dispositivo…" maxlength="100">
+        <button type="submit" aria-label="Buscar"><span aria-hidden="true">→</span></button>
+        <ul id="search-suggestions" role="listbox" aria-label="Dispositivos sugeridos" hidden></ul>
+        <span class="solo-lectores" id="search-status" role="status"></span>
+      </form>
+      <div class="header-actions" id="header-actions"><a class="header-action" href="#/login">Mi cuenta</a><a class="header-action" href="#/cart">Carrito <span id="cart-count">0</span></a></div>
+    </div>
+    <div class="category-nav"><nav class="contenedor" id="category-nav" aria-label="Categorías"><a href="#/catalog" class="nav-all">Todos los dispositivos</a><a href="#/trade">Entrega tu equipo</a></nav></div>
+  </header>
+  <main id="contenido" tabindex="-1"><div class="container page-shell"><p class="muted" role="status">Cargando TecnoTrade…</p></div></main>
+  <footer class="footer"><div class="contenedor footer-grid"><div class="footer-brand"><a href="#/" class="logo">Tecno<span class="logo-accent">Trade</span><span class="logo-dot">.</span></a><p>Tecnología para tu siguiente paso. Compra, consulta tus pedidos y solicita una valoración de tu equipo con información clara.</p><span class="footer-currency">México · Precios en MXN</span></div><div><h2>Explora</h2><a href="#/catalog">Todos los dispositivos</a><a href="#/trade">Canje de equipos</a><a href="#/account?tab=favorites">Mis favoritos</a><a href="#/proyecto">Sobre el proyecto</a></div><div><h2>Tu cuenta</h2><a href="#/login">Iniciar sesión</a><a href="#/register">Crear una cuenta</a><a href="#/account?tab=orders">Mis pedidos</a><a href="#/forgot">Recuperar contraseña</a></div><div><h2>Te acompañamos</h2><a href="#/account?tab=support">Centro de ayuda</a><a href="#/terms">Compra y canje</a><a href="#/panel">Acceso del personal</a><p>Los pedidos con importe pendiente se confirman cuando se registra el pago. No se solicitan datos de tarjeta en este sitio.</p></div></div><div class="contenedor footer-bottom"><span>© <span id="current-year">2026</span> TecnoTrade</span><span>Sesiones privadas · Inventario y saldo validados en servidor</span></div></footer>
+  <div id="notification" class="toast" role="status" aria-live="polite" hidden></div>
+  <noscript><p class="notice">Activa JavaScript para consultar el catálogo y utilizar tu cuenta.</p></noscript>
+</body>
+</html>

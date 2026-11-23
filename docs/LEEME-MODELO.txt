@@ -1,0 +1,1 @@
+El diagrama representa las 21 entidades de negocio de TecnoTrade. El esquema MySQL completo está en database/schema.sql y añade la tabla técnica rate_limits. Los atributos seq se usan para ordenar historiales; no cambian las relaciones de negocio. Esta edición local usa MySQL/MariaDB y no accede a la base de datos del sitio público.

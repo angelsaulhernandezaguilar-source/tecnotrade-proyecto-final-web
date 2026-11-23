@@ -1,0 +1,15 @@
+Options -Indexes
+DirectoryIndex index.php
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:server|database|tests|php|frontend|local)(?:/|$) - [F,L,NC]
+    RewriteRule (^|/)\. - [F,L]
+    RewriteRule ^(?:README\.md|LEEME-PRIMERO\.txt|CONTRATO-INTERNO\.md|PRUEBAS\.md|.*\.(?:sql|mmd|sqlite|bak|zip|log|bat))$ - [F,L,NC]
+    RewriteRule ^(?:api|media)/ index.php [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
+<FilesMatch "^(?:\.|README\.md$|LEEME-PRIMERO\.txt$|CONTRATO-INTERNO\.md$|PRUEBAS\.md$)|\.(?:sql|mmd|sqlite|bak|zip|log|bat)$">
+    Require all denied
+</FilesMatch>

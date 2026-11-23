@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" role="img">
+  <defs>
+    <linearGradient id="q-shell" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#7a8d92"/><stop offset=".4" stop-color="#172b3a"/><stop offset="1" stop-color="#405865"/></linearGradient>
+    <linearGradient id="q-screen" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#d9efb1"/><stop offset=".55" stop-color="#b1c99e"/><stop offset="1" stop-color="#577f77"/></linearGradient>
+    <linearGradient id="q-shield" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fdfef9"/><stop offset="1" stop-color="#d7e3c5"/></linearGradient>
+    <filter id="q-shadow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="10"/></filter>
+    <clipPath id="q-glass"><rect x="210" y="61" width="143" height="287" rx="23"/></clipPath>
+  </defs>
+  <circle cx="300" cy="223" r="165" fill="#d9efb1" opacity=".28"/>
+  <circle cx="300" cy="223" r="140" fill="none" stroke="#a6bd95" stroke-opacity=".24"/>
+  <ellipse cx="302" cy="386" rx="124" ry="17" fill="#172b3a" opacity=".13" filter="url(#q-shadow)"/>
+  <g transform="rotate(-12 282 207)">
+    <rect x="197" y="46" width="169" height="319" rx="34" fill="#a1b0aa"/>
+    <rect x="201" y="47" width="161" height="317" rx="31" fill="url(#q-shell)"/>
+    <rect x="210" y="61" width="143" height="287" rx="23" fill="url(#q-screen)"/>
+    <g clip-path="url(#q-glass)"><path d="M181 274c37-140 90-41 199-166v260H181Z" fill="#172b3a" opacity=".77"/><path d="M188 337c45-125 119-76 190-153v182H188Z" fill="#ef7438"/><path d="M188 360c62-64 110-34 190-95v101H188Z" fill="#f4b18d"/></g>
+    <rect x="254" y="69" width="57" height="14" rx="7" fill="#172b3a"/>
+    <path d="M265 336h35" stroke="#fffefa" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+    <path d="M195 116v36m0 13v28m173-51v52" stroke="#748d91" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <g transform="rotate(10 399 277)">
+    <path d="M399 190c30 22 63 25 80 26v66c0 52-48 89-80 104-32-15-80-52-80-104v-66c17-1 50-4 80-26Z" fill="#172b3a" opacity=".1" filter="url(#q-shadow)"/>
+    <path d="M399 180c30 22 63 25 80 26v66c0 52-48 89-80 104-32-15-80-52-80-104v-66c17-1 50-4 80-26Z" fill="url(#q-shield)" stroke="#f8fcf0" stroke-width="3"/>
+    <path d="M399 195c23 16 47 20 64 23v54c0 39-35 70-64 87-29-17-64-48-64-87v-54c17-3 41-7 64-23Z" fill="none" stroke="#a9c695" stroke-width="1.5"/>
+    <path d="m365 270 23 24 46-49" fill="none" stroke="#42664e" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <path d="M159 110h14m-7-7v14M453 112h12m-6-6v12" stroke="#ef7438" stroke-width="3" stroke-linecap="round" opacity=".7"/>
+  <circle cx="151" cy="302" r="5" fill="#a3bc8d"/>
+</svg>

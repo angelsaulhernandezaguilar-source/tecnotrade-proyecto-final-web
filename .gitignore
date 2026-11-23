@@ -1,0 +1,11 @@
+server/config.local.php
+server/install.lock
+server/storage/
+*.log
+*.zip
+__pycache__/
+node_modules/
+# PHP portatil: lo descarga local/descargar-php.ps1
+php/*
+!php/php.ini
+!php/.htaccess

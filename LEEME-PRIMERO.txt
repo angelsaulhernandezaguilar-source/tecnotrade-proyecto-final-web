@@ -1,0 +1,68 @@
+TECNOTRADE — PROYECTO FINAL WEB
+PHP + MySQL en el servidor · Vue 3 en el navegador
+
+==============================================================
+COMO CORRERLO EN ESTA COMPUTADORA (sin XAMPP)
+==============================================================
+Esta carpeta ya incluye PHP 8.3 (subcarpeta php). Solo necesita el
+MySQL que ya esta instalado en Windows (servicio MySQL80).
+
+1. Doble clic en  iniciar.bat
+   Se abre una ventana negra (el servidor) y el navegador.
+   Deja la ventana abierta mientras uses la tienda.
+
+2. La PRIMERA vez aparece el instalador. Llena:
+      Servidor de BD:   127.0.0.1
+      Puerto de BD:     3306
+      Base de datos:    tecnotrade
+      Usuario MySQL:    root
+      Contrasena MySQL: la de TU MySQL (la que usas en Workbench)
+      URL:              http://localhost:8088/   (ya viene escrita)
+   y crea tu cuenta de administrador (contrasena de 12 a 128 caracteres).
+   El instalador crea la base de datos, las tablas y tu cuenta.
+
+3. Entra a la tienda:  http://localhost:8088/
+   Las siguientes veces solo es doble clic en iniciar.bat.
+
+Para detener el servidor cierra la ventana negra.
+
+==============================================================
+PRIMER USO
+==============================================================
+Los productos de ejemplo son borradores sin precio ni existencias.
+Inicia sesion como administrador y en "Mi panel -> Productos" ponles
+precio, existencias y publicalos: asi aparecen en el catalogo.
+Los seminuevos requieren antes el dictamen de una cuenta Tecnico.
+Los pagos se registran a mano; la pagina no cobra tarjetas.
+
+==============================================================
+FRAMEWORK DEL LADO DEL CLIENTE: VUE 3
+==============================================================
+Segun la investigacion (docs/Investigacion_Frameworks_Lado_Cliente_4CV4.pdf)
+se eligio Vue 3. Esta integrado en dos pantallas:
+   Catalogo  (#/catalog)  busqueda y filtros reactivos, contador y total
+   Carrito   (#/cart)     cantidades, importes y total reactivos
+Codigo fuente de los componentes:  frontend/src/components/*.vue
+Archivo que carga el navegador:    public/vue/tienda-vue.js
+Mas detalle en README.md, seccion "Vue 3".
+
+SOBRE EL PROYECTO Y POWERPOINT
+En el pie de la tienda, "Sobre el proyecto" (#/proyecto) muestra los
+criterios del framework y las APIs, y tiene el boton para descargar la
+presentacion: public/descargas/TecnoTrade-Presentacion.pptx
+
+==============================================================
+SI PREFIERES XAMPP
+==============================================================
+Copia esta carpeta a C:\xampp\htdocs\tecnotrade, inicia Apache y MySQL
+y abre http://localhost/tecnotrade/instalar.php. Funciona igual.
+(La subcarpeta php no se usa con XAMPP.)
+
+==============================================================
+PROBLEMAS FRECUENTES
+==============================================================
+- "Access denied" en el instalador: la contrasena de MySQL no es correcta.
+- "MySQL80 no parece estar iniciado": abre Servicios de Windows e inicialo.
+- La pagina no abre: revisa que la ventana negra siga abierta.
+- Cambiaste el puerto en iniciar.bat: cambia tambien app_url en
+  server/config.local.php.

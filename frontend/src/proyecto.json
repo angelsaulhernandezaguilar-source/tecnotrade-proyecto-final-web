@@ -1,0 +1,160 @@
+{
+  "caracteristicas": [
+    {
+      "nombre": "Componentes",
+      "seccion": "2.1",
+      "funcion": "Divide la interfaz en piezas que se reutilizan.",
+      "enProyecto": "La tarjeta de producto es un componente que se repite en cada resultado del catálogo.",
+      "archivo": "TarjetaProducto.vue"
+    },
+    {
+      "nombre": "Reactividad",
+      "seccion": "2.2",
+      "funcion": "Cuando cambian los datos, la pantalla se actualiza sola.",
+      "enProyecto": "Al agregar un producto cambian el contador y el total sin recargar la página.",
+      "archivo": "tienda.js"
+    },
+    {
+      "nombre": "Enlace de datos y eventos",
+      "seccion": "2.3",
+      "funcion": "Conecta formularios y clics con las variables del estado.",
+      "enProyecto": "v-model en el buscador y los filtros; @click en Agregar y Eliminar.",
+      "archivo": "FiltrosCatalogo.vue"
+    },
+    {
+      "nombre": "Organización del código",
+      "seccion": "2.4",
+      "funcion": "Separa los datos, las vistas y las llamadas al servidor.",
+      "enProyecto": "El estado vive en un módulo, cada pantalla en su vista y los datos llegan por la API.",
+      "archivo": "frontend/src/"
+    },
+    {
+      "nombre": "Ecosistema de herramientas",
+      "seccion": "2.5",
+      "funcion": "Ofrece compilación, depuración y pruebas.",
+      "enProyecto": "Vite compila los componentes a un solo archivo que PHP entrega al navegador.",
+      "archivo": "vite.config.js"
+    },
+    {
+      "nombre": "Diseño adaptable y accesibilidad",
+      "seccion": "2.6",
+      "funcion": "No llega sola: hay que cuidarla en cada componente.",
+      "enProyecto": "Cada campo tiene su etiqueta y los avisos se anuncian a los lectores de pantalla.",
+      "archivo": "FilaCarrito.vue"
+    },
+    {
+      "nombre": "Rendimiento",
+      "seccion": "2.7",
+      "funcion": "Depende de cómo se escribe y se entrega el código.",
+      "enProyecto": "El catálogo se pide una vez al servidor y después se filtra en el navegador.",
+      "archivo": "CatalogoVista.vue"
+    },
+    {
+      "nombre": "Seguridad",
+      "seccion": "2.8",
+      "funcion": "El navegador no decide: el servidor valida.",
+      "enProyecto": "Vue escapa el texto; PHP valida precios, existencias y permisos, y bloquea scripts externos.",
+      "archivo": "server/common.php"
+    }
+  ],
+  "criterios": [
+    {
+      "criterio": "Inicio con HTML existente",
+      "vue": "Alta",
+      "react": "Media",
+      "angular": "Baja",
+      "enProyecto": "Vue se montó sobre la tienda ya hecha y solo cambió dos páginas."
+    },
+    {
+      "criterio": "Simplicidad para una demostración",
+      "vue": "Alta",
+      "react": "Media",
+      "angular": "Media",
+      "enProyecto": "Cada componente es un archivo con su plantilla y su lógica."
+    },
+    {
+      "criterio": "Componentes reutilizables",
+      "vue": "Alta",
+      "react": "Alta",
+      "angular": "Alta",
+      "enProyecto": "La tarjeta, el renglón del carrito y el icono se repiten en varias pantallas."
+    },
+    {
+      "criterio": "Capacidad de crecer",
+      "vue": "Alta",
+      "react": "Alta",
+      "angular": "Alta",
+      "enProyecto": "Se pasó de un script a componentes .vue compilados con Vite."
+    },
+    {
+      "criterio": "Herramientas integradas",
+      "vue": "Media",
+      "react": "Media",
+      "angular": "Alta",
+      "enProyecto": "Solo se añadió Vite; el enrutador sigue siendo el de la tienda."
+    }
+  ],
+  "apis": [
+    {
+      "grupo": "Sesión y cuentas",
+      "quien": "Público",
+      "rutas": [
+        { "metodo": "GET", "ruta": "/api/session", "hace": "Devuelve el usuario actual y el token CSRF." },
+        { "metodo": "POST", "ruta": "/api/auth/register", "hace": "Crea una cuenta de cliente." },
+        { "metodo": "POST", "ruta": "/api/auth/login", "hace": "Inicia sesión." },
+        { "metodo": "POST", "ruta": "/api/auth/logout", "hace": "Cierra la sesión." },
+        { "metodo": "POST", "ruta": "/api/auth/forgot-password", "hace": "Pide el correo de recuperación." },
+        { "metodo": "POST", "ruta": "/api/auth/reset-password", "hace": "Cambia la contraseña con el enlace recibido." },
+        { "metodo": "GET · PATCH", "ruta": "/api/me", "hace": "Consulta y edita el perfil." }
+      ]
+    },
+    {
+      "grupo": "Catálogo",
+      "quien": "Público",
+      "rutas": [
+        { "metodo": "GET", "ruta": "/api/categories", "hace": "Lista las categorías.", "vue": true },
+        { "metodo": "GET", "ruta": "/api/products", "hace": "Lista los productos publicados.", "vue": true },
+        { "metodo": "GET", "ruta": "/api/products/{id}", "hace": "Detalle, precio y existencias de un producto.", "vue": true },
+        { "metodo": "GET", "ruta": "/api/search/suggestions", "hace": "Sugerencias del buscador del encabezado." }
+      ]
+    },
+    {
+      "grupo": "Compra",
+      "quien": "Cliente",
+      "rutas": [
+        { "metodo": "GET · PUT", "ruta": "/api/cart", "hace": "Lee y guarda el carrito de la cuenta.", "vue": true },
+        { "metodo": "GET · PUT", "ruta": "/api/favorites", "hace": "Lee y guarda los favoritos.", "vue": true },
+        { "metodo": "GET · POST", "ruta": "/api/orders", "hace": "Lista los pedidos y crea uno nuevo." },
+        { "metodo": "GET", "ruta": "/api/orders/{id}", "hace": "Importes y seguimiento de un pedido." },
+        { "metodo": "POST", "ruta": "/api/orders/{id}/cancel", "hace": "Cancela un pedido pendiente de pago." },
+        { "metodo": "GET", "ruta": "/api/wallet", "hace": "Saldo a favor y sus movimientos." }
+      ]
+    },
+    {
+      "grupo": "Canje",
+      "quien": "Cliente y técnico",
+      "rutas": [
+        { "metodo": "GET", "ruta": "/api/models", "hace": "Modelos aceptados y referencias de mercado." },
+        { "metodo": "POST", "ruta": "/api/tradeins/quote", "hace": "Calcula una estimación provisional." },
+        { "metodo": "GET · POST", "ruta": "/api/tradeins", "hace": "Lista los canjes y registra una solicitud." },
+        { "metodo": "POST", "ruta": "/api/uploads", "hace": "Sube la fotografía del equipo." },
+        { "metodo": "PATCH", "ruta": "/api/tradeins/{id}/inspection", "hace": "El técnico registra la revisión y la oferta." },
+        { "metodo": "POST", "ruta": "/api/tradeins/{id}/accept", "hace": "El cliente acepta la oferta final." }
+      ]
+    },
+    {
+      "grupo": "Operación",
+      "quien": "Personal",
+      "rutas": [
+        { "metodo": "PATCH", "ruta": "/api/orders/{id}/status", "hace": "Logística actualiza el estado del pedido." },
+        { "metodo": "GET · POST", "ruta": "/api/tickets", "hace": "Consultas de soporte del cliente." },
+        { "metodo": "POST", "ruta": "/api/tickets/{id}/messages", "hace": "Agrega un mensaje a la conversación." },
+        { "metodo": "GET", "ruta": "/api/reviews", "hace": "Seminuevos pendientes de revisión técnica." },
+        { "metodo": "PATCH", "ruta": "/api/reviews/{id}", "hace": "El técnico emite el dictamen." },
+        { "metodo": "GET", "ruta": "/api/admin/overview", "hace": "Resumen para administración." },
+        { "metodo": "GET · POST · PATCH · DELETE", "ruta": "/api/admin/products", "hace": "Alta, cambio y baja de productos. Igual para categorías, promociones, usuarios y referencias de mercado." },
+        { "metodo": "POST", "ruta": "/api/admin/orders/{id}/payments", "hace": "Registra un pago confirmado." }
+      ]
+    }
+  ]
+}
